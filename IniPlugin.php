@@ -14,12 +14,12 @@ class IniPlugin extends BasePlugin
 	{
 		$alias	= $this->getSettings()->getAttribute('pluginAlias');
 
-		return ($real || empty($alias)) ? 'Initialize' : $alias;
+		return ($real || empty($alias)) ? 'Ini' : $alias;
 	}
 
 	public function getVersion()
 	{
-		return '1.0.0';
+		return '1.1.0';
 	}
 
 	public function getDeveloper()
@@ -40,7 +40,8 @@ class IniPlugin extends BasePlugin
 	public function defineSettings()
 	{
 		return array(
-			'configName'    => array(AttributeType::Slug,   'default' => 'globals'),
+			'configName'    => array(AttributeType::String, 'default' => 'globals'),
+			'configFile'    => array(AttributeType::String, 'default' => 'general'),
 			'enableCpTab'   => array(AttributeType::String, 'default' => false),
 			'pluginAlias'   => array(AttributeType::String, 'default' => 'Initialize'),
 		);

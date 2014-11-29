@@ -15,9 +15,13 @@ class IniService extends BaseApplicationComponent
 	 */
 	public function init()
 	{
-		// Config file is optional but adding it ensure forward compatibility
+		$settings   = craft()->plugins->getPlugin('ini')->getSettings();
+		$configFile = $settings->getAttribute('configFile');
+		$configName = $settings->getAttribute('configName');
+
+		// Config file is optional but adding it ensures forward compatibility
 		$env    = craft()->config->get('environmentVariables', ConfigFile::General);
-		$vars   = craft()->config->get(craft()->plugins->getPlugin('ini')->getSettings()->getAttribute('configName'), ConfigFile::General);
+		$vars   = ($configFile == 'plugin') ? craft()->config->get($configName, 'ini') : craft()->config->get($configName, ConfigFile::General);
 
 		// Make sure the merge does not trigger any errors or warnings
 		$this->vars = array_merge(is_array($env) ? $env : array(), is_array($vars) ? $vars : array());

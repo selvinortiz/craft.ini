@@ -12,8 +12,19 @@
 				id:				"configName",
 				name:			"configName",
 				label:			"Config Key Name"|t,
-				instructions:	"The name of the config key where your variables are stored inside general.php"|t,
+				instructions:	"The name of the config key where your variables are stored"|t,
 				value:			settings.configName,
+				errors:			""
+			})
+		}}
+		{{
+			forms.selectField({
+				id:				"configFile",
+				name:			"configFile",
+				label:			"Config File"|t,
+				instructions:	"The config file your are defining your variables in"|t,
+				options:        { general: "@config/general.php", plugin: "@plugins/ini/config.php" },
+				value:			settings.configFile,
 				errors:			""
 			})
 		}}
