@@ -1,4 +1,4 @@
-# Ini V1.0.1
+# Ini V1.1.0
 An optimized way of defining config variables to use in your templates.
 
 ## Documentation
