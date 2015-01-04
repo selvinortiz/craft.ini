@@ -43,7 +43,7 @@ class IniPlugin extends BasePlugin
 			'configName'    => array(AttributeType::String, 'default' => 'globals'),
 			'configFile'    => array(AttributeType::String, 'default' => 'general'),
 			'enableCpTab'   => array(AttributeType::String, 'default' => false),
-			'pluginAlias'   => array(AttributeType::String, 'default' => 'Initialize'),
+			'pluginAlias'   => array(AttributeType::String, 'default' => 'Ini'),
 		);
 	}
 
